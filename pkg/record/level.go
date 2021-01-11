@@ -1,4 +1,4 @@
-package level
+package record
 
 import (
 	"fmt"
@@ -6,12 +6,12 @@ import (
 	"github.com/amarin/gogedcom/pkg/errors"
 )
 
-type RecordLevel uint
+type Level uint
 
 // Validate checks internal data is valid, returns error otherwise.
-func (level RecordLevel) Validate() error {
+func (level Level) Validate() error {
 	if level > 99 {
-		return fmt.Errorf("%w: record level: must %v <= 99", errors.ErrValidation, level)
+		return fmt.Errorf("%w: level: must %v <= 99", errors.ErrValidation, level)
 	}
 
 	return nil
